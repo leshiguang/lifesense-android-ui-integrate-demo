@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+
+    <protocol_name>开发</protocol_name>
+    <protocol_sort>1</protocol_sort>
+
+    <!--这个是支持HTTPS的地址: sports-dev.lifesense.com-->
+    <!--这个是HTTP的地址: dev.sports.lifesense.com-->
+    <protocol_host>sports-dev.lifesense.com</protocol_host>
+
+    <url_domain>https://${protocol_host}</url_domain>
+    <cookie_domain>https://${protocol_host}/</cookie_domain>
+    <websocket_host>sports-dev.lifesense.com</websocket_host>
+    <static_domain>https://static-dev.lifesense.com/</static_domain>
+
+    <web_domain></web_domain>
+</config>

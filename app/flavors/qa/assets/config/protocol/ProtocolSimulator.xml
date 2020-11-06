@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<protocols>
+
+<!-- pushRequest -->
+<!-- <response name="UpgradeCheck" ><![CDATA[
+{
+    ret:0,
+    msg:"xxxx",
+    data:
+    {
+       upgrade:
+       {
+    		isforce:0,
+   			version:"1.0.0.2",
+    		desc:"更新诸多功能！！！",
+    		url:"http://x.rdm.3g.qq.com/a/11565"
+		}
+    }
+}
+]]></response> -->
+
+</protocols>

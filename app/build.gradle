@@ -1,0 +1,154 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion Integer.valueOf("$COMPILESDKVERSION")
+    buildToolsVersion "$BUILDTOOLSVERSION"
+
+    defaultConfig {
+        applicationId "com.lifesense.weidong.lswebviewmoudle"
+
+        minSdkVersion Integer.valueOf("$MINSDKVERSION")
+        targetSdkVersion Integer.valueOf("$TARGETSDKVERSION")
+        versionCode Integer.valueOf("$VERSIONCODE")
+        versionName "$VERSIONNAME"
+        multiDexEnabled false
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            manifestPlaceholders = [
+                    "fb_app_id":"12345"
+            ]
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            manifestPlaceholders = [
+                    "fb_app_id":"12345"
+            ]
+        }
+    }
+
+
+    sourceSets {
+        main {
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            java.srcDirs = ['src/main/java']
+            res.srcDirs = ['src/main/res']
+            assets.srcDirs = ['src/main/assets']
+        }
+        dev {
+            res.srcDirs = ['flavors/dev/res']
+            resources.srcDirs = ['flavors/dev/res']
+            assets.srcDirs = ['flavors/dev/assets']
+        }
+        qa {
+            res.srcDirs = ['flavors/qa/res']
+            resources.srcDirs = ['flavors/qa/res']
+            assets.srcDirs = ['flavors/qa/assets']
+        }
+        alpha {
+            res.srcDirs = ['flavors/alpha/res']
+            resources.srcDirs = ['flavors/alpha/res']
+            assets.srcDirs = ['flavors/alpha/assets']
+        }
+        beta {
+            res.srcDirs = ['flavors/beta/res']
+            resources.srcDirs = ['flavors/beta/res']
+        }
+        // Move the tests to tests/java, tests/res, etc...
+//        instrumentTest.setRoot('tests')
+
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+    flavorDimensions "default"
+
+    productFlavors {
+        prerelease {
+            buildConfigField("boolean", "isTest", "false")
+            dimension "default"
+        }
+        beta {
+            buildConfigField("boolean", "isTest", "false")
+            dimension "default"
+        }
+        dev {
+            dimension "default"
+            buildConfigField("boolean", "isTest", "true")
+            applicationId "com.lifesense.weidong.lswebviewmodule.dev"
+        }
+        qa {
+            buildConfigField("boolean", "isTest", "true")
+            applicationId "com.lifesense.weidong.lswebviewmodule.qa"
+            dimension "default"
+        }
+
+        alpha {
+            buildConfigField("boolean", "isTest", "true")
+            applicationId "com.lifesense.weidong.lswebviewmodule.qa"
+            dimension "default"
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.aar'])
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+//    implementation(name: 'open_ad_sdk',ext: 'aar')
+    api "com.nostra13.universalimageloader:universal-image-loader:$version_imageloader"
+    api "com.parse.bolts:bolts-tasks:$version_bolttask"//异步任务
+    api "org.apache.commons:commons-lang3:$version_lang3"
+    api "org.apache.commons:commons-collections4:$version_collections4"
+    api "androidx.annotation:annotation:$version_androidx_annotation"
+    api "androidx.appcompat:appcompat:$version_appcompat"
+    api "androidx.recyclerview:recyclerview:$version_recyclerview"
+    api 'org.greenrobot:greendao:3.3.0' // add library
+//    api 'com.facebook.android:facebook-share:[5,6)'
+    api "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:$version_wechatsdk" //微信
+//    api 'com.twitter.sdk.android:twitter-core:3.3.0'
+//    api 'com.twitter.sdk.android:tweet-ui:3.3.0'
+//    api 'com.twitter.sdk.android:tweet-composer:3.3.0'
+    api "com.alibaba:fastjson:$version_alibaba_fastjson"
+    api 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+    api 'com.contrarywind:Android-PickerView:4.1.9'
+
+}
+
+
+configurations {
+    cleanAnnotations
+    compile.exclude group: 'org.jetbrains', module:'annotations'
+}
+
+
+

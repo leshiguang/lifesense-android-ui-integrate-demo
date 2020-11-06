@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <protocol_name>发布</protocol_name>
+    <protocol_sort>-1</protocol_sort>
+
+
+    <protocol_host>sports.lifesense.com</protocol_host>
+
+    <websocket_host>websocket.lifesense.com</websocket_host>
+
+    <url_domain>https://${protocol_host}</url_domain>
+
+    <cookie_domain>https://${protocol_host}/</cookie_domain>
+    <TINYUN_APPKEY>88c9a28199734624a7c88f8fcaacf91b</TINYUN_APPKEY>
+    <static_domain>https://cdn.lifesense.com/</static_domain>
+	<web_domain></web_domain>
+
+</config>

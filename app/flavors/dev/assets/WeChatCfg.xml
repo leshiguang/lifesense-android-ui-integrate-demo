@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config>
+    <Wechat
+    AppId="wxd8adb8d81c77e8fe"
+    AppSecret="65c72906b5fac86d3abca7d3ea5da3fd"
+    OpenUserName = "gh_4bc17495d97a"
+    OpenExtMsg = "http://we.qq.com/d/AQBDvIC3mM1kHWT5aoTFUZGwjfSd3UJaKt9mgY7R"/>
+</Config>

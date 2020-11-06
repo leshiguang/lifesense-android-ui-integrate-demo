@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+	文件名： Default.xml
+	描述：
+		本文件记录项目通用的参数设置，通过DefaultConfig来读取
+-->
+
+<config>
+    <!-- 是否调试,影响到日志打印、环境切换等 -->
+    <debug>true</debug>
+    <!-- app标识，用于创建文件夹名称等 -->
+    <appid>LSSport</appid>
+    <!-- 模式，支持值：dev,qa,release -->
+    <mode>qa</mode>
+
+    <!-- 协议配置文件名 -->
+    <protocol_config_name>ProtocolConfig_qa.xml</protocol_config_name>
+
+    <appType>6</appType>
+</config>

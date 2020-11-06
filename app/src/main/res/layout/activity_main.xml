@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lifesense.android.demo.MainActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/bt_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="体重首页"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_bp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="血压首页"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_step"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:text="步数首页"/>
+
+
+    <Button
+        android:id="@+id/btn_sleep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:text="睡眠首页"/>
+
+
+    <Button
+        android:id="@+id/btn_hr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:text="心率首页"/>
+    <Button
+        android:id="@+id/toDeviceList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:text="@string/device_list"/>
+
+    <Button
+        android:id="@+id/resetWifi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:text="重置WIFI"/>
+    <Button
+        android:id="@+id/searchWifiConfig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:text="查询配网状态"/>
+    <Button
+        android:id="@+id/startScanWifi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:text="扫描wifi"/>
+
+    <Button
+        android:id="@+id/startConfigWifi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:text="开始配网"/>
+
+    <Button
+        android:id="@+id/bt_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:text="退出登录"/>
+    <TextView
+        android:id="@+id/tv_app_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/scale_black"
+        android:gravity="center"
+        />
+
+    <ScrollView
+        android:id="@+id/scoll"
+        android:layout_width="fill_parent"
+        android:layout_height="500px"
+        android:scrollbarStyle="outsideOverlay" android:background="@android:drawable/edit_text">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_weight"
+            />
+    </ScrollView>
+
+</LinearLayout>

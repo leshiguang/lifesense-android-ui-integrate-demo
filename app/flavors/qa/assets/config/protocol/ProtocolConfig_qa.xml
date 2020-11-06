@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+
+    <protocol_name>测试</protocol_name>
+    <protocol_sort>1</protocol_sort>
+
+    <protocol_host>sports-beta.lifesense.com</protocol_host>
+    <url_domain>https://${protocol_host}</url_domain>
+    <cookie_domain>https://${protocol_host}/</cookie_domain>
+    <websocket_host>socket-qa.lifesense.com</websocket_host>
+    <TINYUN_APPKEY>f52b76ba6d614588b989a142bea8f1ce</TINYUN_APPKEY>
+    <static_domain>https://static-qa.lifesense.com/</static_domain>
+
+    <web_domain></web_domain>
+</config>
+

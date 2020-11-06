@@ -1,0 +1,8 @@
+include ':app'
+
+//include ':modules:lifesense-android-common-service',
+//         ':modules:lifesense-android-health-service',
+//        ':modules:lifesense-android-webview-service'
+//project(':modules:lifesense-android-common-service').projectDir = new File('modules/lifesense-android-common-service')
+//project(':modules:lifesense-android-webview-service').projectDir = new File('modules/lifesense-android-webview-service')
+//project(':modules:lifesense-android-health-service').projectDir = new File('modules/lifesense-android-health-service')
