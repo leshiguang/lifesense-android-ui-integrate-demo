@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textSize="18sp"
-        android:text="@string/device_list"/>
+        android:text="设备列表"/>
 
     <Button
         android:id="@+id/resetWifi"
