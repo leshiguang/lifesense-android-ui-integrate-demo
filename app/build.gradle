@@ -1,5 +1,9 @@
 apply plugin: 'com.android.application'
 //apply plugin: 'com.didi.dokit'
+def getProductName() {
+    def jsonFile = file('path/to/json')
+    return jsonFile.text;
+}
 android {
     compileSdkVersion Integer.valueOf("$COMPILESDKVERSION")
     buildToolsVersion "$BUILDTOOLSVERSION"
@@ -19,7 +23,8 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             manifestPlaceholders = [
-                    "fb_app_id":"12345"
+                    "fb_app_id":"12345",
+                    "config":file('../config.json').text
             ]
         }
 
@@ -27,7 +32,8 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             manifestPlaceholders = [
-                    "fb_app_id":"12345"
+                    "fb_app_id":"12345",
+                    "config":file('../config.json').text
             ]
         }
     }

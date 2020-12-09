@@ -29,6 +29,7 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:launchMode="singleTop">
+        <meta-data android:name="config" android:value="${config}"></meta-data>
         <activity android:name="com.lifesense.android.demo.MainActivity"
             android:screenOrientation="portrait"
             >

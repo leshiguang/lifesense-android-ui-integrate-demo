@@ -1,6 +1,7 @@
 package com.lifesense.android.demo;
 
 import android.Manifest;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
@@ -17,6 +18,7 @@ import androidx.core.content.ContextCompat;
 
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.lifesense.android.bluetooth.core.bean.BaseDeviceData;
 import com.lifesense.android.bluetooth.core.bean.WifiInfo;
 import com.lifesense.android.bluetooth.core.bean.constant.DeviceConnectState;
@@ -52,6 +54,7 @@ public class MainActivity extends BaseActivity {
     private com.lifesense.android.bluetooth.core.bean.WifiInfo cache = new com.lifesense.android.bluetooth.core.bean.WifiInfo();
     private String mac;
     private BleReceiveCallback bleReceiveCallback;
+    private JSONObject jsonObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -310,16 +313,27 @@ public class MainActivity extends BaseActivity {
             }
 
         });
+        jsonObject = new JSONObject();
+        try {
+            ApplicationInfo appInfo = getPackageManager()
+                    .getApplicationInfo(getPackageName(),
+                            PackageManager.GET_META_DATA);
 
+            String config = appInfo.metaData.getString("config");
+            jsonObject = JSON.parseObject(config);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+
+        }
         LZDeviceService.getInstance().registerDataReceiveCallBack(bleReceiveCallback);
-        LZDeviceService.getInstance().login(getApplicationContext(), "appKey", "appSecret", ANDROID_ID, new IRequestCallBack<BaseResponse>() {
+        LZDeviceService.getInstance().login(getApplicationContext(), jsonObject.getString("appKey"), jsonObject.getString("appSecret"), ANDROID_ID, new IRequestCallBack<BaseResponse>() {
             @Override
             public void onRequestSuccess(BaseResponse response) {
                 LoginResponse loginResponse = (LoginResponse) response;
                 RequestCommonParamsUtils.put("appVersion", "4.6");
                 LZDeviceService.getInstance().startDataReceive();
                 //初始化cookie
-                LSWebViewManager.getInstance().init(loginResponse.getLoginEntity().getUserId(), loginResponse.getLoginEntity().getAccessToken(),"tn");
+                LSWebViewManager.getInstance().init(loginResponse.getLoginEntity().getUserId(), loginResponse.getLoginEntity().getAccessToken(), jsonObject.getString("tn"));
                 LSWebViewManager.getInstance().setDebug(true);
                 LZDeviceService.getInstance().setDebug(true);
                 ToastUtil.showCustomCenterShowToast(MainActivity.this, "登陆成功!");
