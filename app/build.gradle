@@ -123,34 +123,28 @@ android {
             dirs 'libs'
         }
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.aar'])
-    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
-//    implementation(name: 'open_ad_sdk',ext: 'aar')
+    api "androidx.appcompat:appcompat:$version_appcompat"
+    api 'com.alibaba:fastjson:1.2.73'
     api "com.nostra13.universalimageloader:universal-image-loader:$version_imageloader"
-    api "com.parse.bolts:bolts-tasks:$version_bolttask"//异步任务
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
     api "org.apache.commons:commons-lang3:$version_lang3"
     api "org.apache.commons:commons-collections4:$version_collections4"
-    api "androidx.annotation:annotation:$version_androidx_annotation"
-    api "androidx.appcompat:appcompat:$version_appcompat"
-    api "androidx.recyclerview:recyclerview:$version_recyclerview"
-    api 'org.greenrobot:greendao:3.3.0' // add library
-//    api 'com.facebook.android:facebook-share:[5,6)'
-    api "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:$version_wechatsdk" //微信
-//    api 'com.twitter.sdk.android:twitter-core:3.3.0'
-//    api 'com.twitter.sdk.android:tweet-ui:3.3.0'
-//    api 'com.twitter.sdk.android:tweet-composer:3.3.0'
-    api "com.alibaba:fastjson:$version_alibaba_fastjson"
-    api 'com.jakewharton:butterknife:10.2.3'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
     api 'com.contrarywind:Android-PickerView:4.1.9'
-    compile 'com.dianping.android.sdk:logan:1.2.4'
-//    debugImplementation 'com.didichuxing.doraemonkit:dokitx:3.3.3'
-//    releaseImplementation 'com.didichuxing.doraemonkit:dokitx-no-op:3.3.3'
-
+    api 'com.annimon:stream:1.2.1'
+    api 'io.reactivex.rxjava2:rxjava:2.2.8'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    api "androidx.recyclerview:recyclerview:$version_recyclerview"
+    api 'com.hannesdorfmann.fragmentargs:annotation:4.0.0-RC1'
+    api "androidx.room:room-runtime:2.2.2"
+    annotationProcessor "androidx.room:room-compiler:2.2.2"
 }
 
 
@@ -159,47 +153,6 @@ configurations {
     compile.exclude group: 'org.jetbrains', module:'annotations'
 }
 
-//
-////dokitExt {
-////    //通用设置
-////    comm {
-////        //地图经纬度开关
-////        gpsSwitch true
-////        //网络开关
-////        networkSwitch true
-////        //大图开关
-////        bigImgSwitch true
-////        //webView js 抓包
-////        webViewSwitch true
-////    }
-////
-////    slowMethod {
-////        //0:默认模式 打印函数调用栈 需添加指定入口  默认为application onCreate 和attachBaseContext
-////        //1:普通模式 运行时打印某个函数的耗时 全局业务代码函数插入
-////        strategy 1
-////        //函数功能开关
-////        methodSwitch true
-////
-////        //调用栈模式配置
-////        stackMethod {
-////            //默认值为 5ms 小于该值的函数在调用栈中不显示
-////            thresholdTime 10
-////            //调用栈函数入口
-////            enterMethods = ["com.didichuxing.doraemondemo.MainDebugActivity.test1"]
-////            //黑名单 粒度最小到类 暂不支持到方法
-////            methodBlacklist = ["com.facebook.drawee.backends.pipeline.Fresco"]
-////        }
-////        //普通模式配置
-////        normalMethod {
-////            //默认值为 500ms 小于该值的函数在运行时不会在控制台中被打印
-////            thresholdTime 500
-////            //需要针对函数插装的包名
-////            packageNames = ["com.didichuxing.doraemondemo"]
-////            //不需要针对函数插装的包名&类名
-////            methodBlacklist = ["com.didichuxing.doraemondemo.dokit"]
-////        }
-////    }
-////}
 
 
 

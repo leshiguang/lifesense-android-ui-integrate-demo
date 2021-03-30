@@ -20,16 +20,14 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
-
     <application
-        android:name="com.lifesense.android.demo.LZApplication"
         android:allowBackup="true"
-        android:label="@string/scale_app_name"
+        android:label="Bluetooth Demo"
         android:supportsRtl="true"
-        android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-        android:launchMode="singleTop">
-        <meta-data android:name="config" android:value="${config}"></meta-data>
+        android:launchMode="singleTop"
+        android:name="com.lifesense.android.demo.MyApplication"
+        >
         <activity android:name="com.lifesense.android.demo.MainActivity"
             android:screenOrientation="portrait"
             >
@@ -39,15 +37,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- QQ分享相关 -->
-        <!-- 微信的系统通知的信息 -->
-<!--        <service-->
-<!--            android:name="com.lifesense.android.bluetooth.core.business.push.msg.NotificationService"-->
-<!--            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.service.notification.NotificationListenerService" />-->
-<!--            </intent-filter>-->
-<!--        </service>-->
     </application>
+
 
 </manifest>
