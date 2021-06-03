@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btWeight).setOnClickListener(v -> LZHealth.getInstance().openPage(Page.WEIGHT));
         findViewById(R.id.btSleep).setOnClickListener(v -> LZHealth.getInstance().openPage(Page.SLEEP));
         findViewById(R.id.btDeviceList).setOnClickListener(v -> LZHealth.getInstance().openPage(Page.DEVICE_LIST));
+        findViewById(R.id.btBloodSugar).setOnClickListener(v -> LZHealth.getInstance().openPage(Page.BLOOD_SUGAR));
+        findViewById(R.id.btCounselorEmbed).setOnClickListener(v -> LZHealth.getInstance().openPage(Page.COUNSELOR_EMBED));
     }
 
 

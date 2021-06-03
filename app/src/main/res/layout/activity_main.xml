@@ -37,11 +37,23 @@
         android:layout_height="wrap_content"
         android:text="睡眠" />
 
+    <Button
+        android:id="@+id/btBloodSugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="血糖" />
+    <Button
+        android:id="@+id/btCounselorEmbed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="顾问中心" />
+
 
     <Button
         android:id="@+id/btDeviceList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="设备列表" />
+
 
 </LinearLayout>

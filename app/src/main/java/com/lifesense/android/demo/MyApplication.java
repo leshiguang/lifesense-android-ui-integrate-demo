@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.lifesense.android.health.service.Config;
 import com.lifesense.android.health.service.LZHealth;
+import com.lifesense.share.ShareConfig;
 
 /**
  * Create by qwerty
@@ -14,10 +15,12 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Config config = new Config();
-        config.setAppKey("lx66f7cab36fdd119c");
-        config.setAppSecret("d5836b5c336b840103227e2d0777a0911806f204");
-        config.setTn("dingding");
-        config.setDebug(true);
+        config.setAppKey("lx123456");
+        config.setAppSecret("234567");
+        config.setTn("tangchen");
+        //替换成自己申请的微信appid
+        ShareConfig shareConfig = new ShareConfig.Builder().wx("wx123456","123456").build();
+        config.setShareConfig(shareConfig);
         LZHealth.getInstance().init(this,config);
     }
 }
