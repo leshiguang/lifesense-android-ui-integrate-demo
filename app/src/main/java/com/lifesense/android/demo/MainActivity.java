@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void initData() {
         if(checkPermission()){
             String androidId = Settings.System.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
-            LZHealth.getInstance().login(androidId, loginState -> Toast.makeText(this,loginState.name(),Toast.LENGTH_SHORT).show());
+            LZHealth.getInstance().login(androidId, false,loginState -> Toast.makeText(this,loginState.name(),Toast.LENGTH_SHORT).show());
         }
         findViewById(R.id.btStep).setOnClickListener(v -> LZHealth.getInstance().openPage(Page.STEP));
         findViewById(R.id.btBloodPressure).setOnClickListener(v -> LZHealth.getInstance().openPage(Page.BLOOD_PRESSURE));
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (flag) {
                     String androidId = Settings.System.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
-                    LZHealth.getInstance().login(androidId, loginState -> {
+                    LZHealth.getInstance().login(androidId, false, loginState -> {
                         Toast.makeText(this,loginState.name(),Toast.LENGTH_SHORT);
                     });
 

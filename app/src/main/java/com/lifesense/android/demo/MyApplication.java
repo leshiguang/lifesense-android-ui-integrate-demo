@@ -16,9 +16,11 @@ public class MyApplication extends Application {
         super.onCreate();
         Config config = new Config();
         config.setAppKey("lx123456");
-        config.setAppSecret("234567");
-        config.setTn("tangchen");
-        //替换成自己申请的微信appid
+        config.setAppSecret("123456");
+        config.setTn("tn");
+        config.setOnline(true);
+        config.setDebug(true);
+        //替换成自己申请的微信appId和secretKey
         ShareConfig shareConfig = new ShareConfig.Builder().wx("wx123456","123456").build();
         config.setShareConfig(shareConfig);
         LZHealth.getInstance().init(this,config);
