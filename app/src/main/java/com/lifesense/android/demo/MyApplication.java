@@ -16,9 +16,9 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Config config = new Config();
-        config.setAppKey("lxad5ccd943ce4d427");
-        config.setAppSecret("247d047e1bf98d518b58264997609a708e9ab1e4");
-        config.setTn("zhongyizhijia");
+        config.setAppKey("your appkey");
+        config.setAppSecret("your appsecret");
+        config.setTn("your tn");
         config.setOnline(true);
         config.setDebug(true);
         //替换成自己申请的微信appId和secretKey
